@@ -25,9 +25,11 @@ public class PrepareServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Map<String,String[]> map = request.getParameterMap();
+		
 		if(map.containsKey("languages")){
 			prepareLanguage(request, response);
 		}
+		
 		String page = request.getParameter("page");
 		request.getRequestDispatcher(page).forward(request, response);
 	}

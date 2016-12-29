@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd 
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<description>Spring公共配置</description>
+	<aop:aspectj-autoproxy />
+	
+	<context:component-scan base-package="zoukunhong.Exam_12758_20161229_1.event" />
+<!-- 	<context:component-scan base-package="zoukunhong.User.dao" />
+	<context:component-scan base-package="zoukunhong.User.service" />
+	<context:component-scan base-package="zoukunhong.User.controller" />
+	
+	
+	
+	<bean id="serviceAop" class="zoukunhong.User.aop.ServiceAop"/>
+	<aop:config>
+		<aop:aspect id="myaop" ref="serviceAop">
+			<aop:pointcut id="mycut" expression="execution(* zoukunhong.User.service..*.*(..))" />
+			<aop:before pointcut-ref="mycut" method="doAccessCheck" />
+			<aop:after-returning pointcut-ref="mycut" method="doReturnCheck" />
+ 			<aop:after-throwing pointcut-ref="mycut" method="doExceptionAction" />
+			<aop:after pointcut-ref="mycut" method="doReleaseAction" />
+			<aop:around pointcut-ref="mycut" method="doBasicProfiling" />
+		</aop:aspect>
+	</aop:config> -->
+
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:resources/config.xml" />
+		<property name="mapperLocations" value="classpath*:resources/*Mapper.xml" />
+	</bean>
+
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb?characterEncoding=utf8&amp;useSSL=true" />
+		<property name="username" value="root" />
+		<property name="maxActive" value="100" />
+		<property name="maxIdle" value="20" />
+		<property name="minIdle" value="0" />
+		<property name="defaultAutoCommit" value="false" />
+	</bean>
+
+</beans>
