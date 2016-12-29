@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class EventPublisher implements ApplicationEventPublisherAware{
 	private ApplicationEventPublisher publisher;
-	public void publishEvent(String eventName,Object EventValue){
-		this.publisher.publishEvent(new TradeEvent(eventName,EventValue));
+	public void publishEvent(TradeEvent event){
+		this.publisher.publishEvent(event);
 	}
 	@Override
 	public void setApplicationEventPublisher(ApplicationEventPublisher publisher) {

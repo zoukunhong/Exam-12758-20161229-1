@@ -4,11 +4,8 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-  <settings>
-  	<setting name="mapUnderscoreToCamelCase" value="true"/>
-  </settings>
-<!--   <typeAliases>
-  	<typeAlias type="zoukunhong.User.bean.User" alias="User"/>
-  	<typeAlias type="zoukunhong.User.bean.UserInfo" alias="UserInfo"/>
-  </typeAliases> -->
+  <typeAliases>
+  	<typeAlias type="zoukunhong.Exam_12758_20161229_1.entity.Film" alias="Film"/>
+  	<typeAlias type="zoukunhong.Exam_12758_20161229_1.entity.Language" alias="Language"/>
+  </typeAliases>
 </configuration>

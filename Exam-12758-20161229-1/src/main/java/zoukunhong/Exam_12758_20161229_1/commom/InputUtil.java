@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class InputUtil {
 	public static int getInt(){
-		System.out.print("请输入一个正整数：");
 		Scanner sc = new Scanner(System.in);
         while(true){
     		String input = sc.next();

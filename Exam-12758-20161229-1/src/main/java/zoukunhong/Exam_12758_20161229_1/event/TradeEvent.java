@@ -2,7 +2,7 @@ package zoukunhong.Exam_12758_20161229_1.event;
 
 import org.springframework.context.ApplicationEvent;
 
-public class TradeEvent extends ApplicationEvent{
+public abstract class TradeEvent extends ApplicationEvent{
 	private Object name;
 	private Object value;
 	
