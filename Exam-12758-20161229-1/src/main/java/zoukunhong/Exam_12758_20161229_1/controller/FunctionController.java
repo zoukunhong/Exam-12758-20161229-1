@@ -19,11 +19,11 @@ public class FunctionController {
 	private IEntityService filmService;
 	public void saveFilm(){
         Film film = new Film();
-        Scanner sc = new Scanner(System.in);
+       
         System.out.println("请输入电影名称(title): ");
-        String title = sc.nextLine();
+        String title = InputUtil.getString();
         System.out.println("请输入电影描述(description): ");
-        String description = sc.nextLine();
+        String description = InputUtil.getString();
         System.out.println("请输入语言 ID(language_id): ");
         Integer language_id = InputUtil.getInt();
         film.setTitle(title);

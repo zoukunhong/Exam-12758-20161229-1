@@ -14,4 +14,15 @@ public class InputUtil {
     		}
         }
 	}
+	public static String getString(){
+		Scanner sc = new Scanner(System.in);
+        while(true){
+    		String input = sc.nextLine();
+    		if("".equals(input.trim())){
+    			System.out.println("非法字符串请重新输入！");
+    		}else{
+    			return input;
+    		}
+        }
+	}
 }
