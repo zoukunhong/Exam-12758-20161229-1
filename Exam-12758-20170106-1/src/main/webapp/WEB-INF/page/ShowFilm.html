@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Title</title>
-<link href="/Exam-12758-20170106-1/css/basecss.css" rel="stylesheet"
+<link href="/css/basecss.css" rel="stylesheet"
 	type="text/css" />
-<link href="/Exam-12758-20170106-1/css/showFilmCss.css" rel="stylesheet"
+<link href="/css/showFilmCss.css" rel="stylesheet"
 	type="text/css" />
 <script
 	src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -117,7 +117,7 @@
 
             page.current = queryInfo.page;
             $.ajax({
-                url: "/Exam-12758-20170106-1/data/film.action",
+                url: "/data/film.action",
                 type: "GET",
                 dataType: "json",
                 data: queryInfo,
@@ -130,7 +130,7 @@
                         $template.children('td').eq(2).text(item.description);
                         $template.children('td').eq(3).text(item.language.name);
                         var operate = "<a href='#' name='delete' title='" + item.filmId + "'>删除</a>" +
-                            "<a name='modify' href='/Exam-12758-20170106-1/film/ModifyFilm.action?filmId=" + item.filmId + "' >修改</a>";
+                            "<a name='modify' href='/film/ModifyFilm.action?filmId=" + item.filmId + "' >修改</a>";
                         $template.children('td').eq(4).html(operate);
                         $('#filmTable').append($template);
                     }
@@ -146,7 +146,7 @@
         }
         function queryLanguage() {
             $.ajax({
-                url: "/Exam-12758-20170106-1/data/language.action",
+                url: "/data/language.action",
                 type: "GET",
                 dataType: "json",
                 data: {},
@@ -162,7 +162,7 @@
         }
         function deleteFilm(filmId){
             $.ajax({
-                url: "/Exam-12758-20170106-1/data/film/delete.action",
+                url: "/data/film/delete.action",
                 type: "GET",
                 dataType: "json",
                 data: {filmId : filmId},
@@ -223,7 +223,7 @@
                 }
             });
             $("#add").click(function (){
-            	window.location.href="/Exam-12758-20170106-1/film/AddFilm.action"; 
+            	window.location.href="/film/AddFilm.action"; 
             });
             $("#filmTable a[name='delete']").click(function (){
 				if(confirm("你确定要删ID为" + $(this).attr("title") + "的电影吗？")){

@@ -7,7 +7,7 @@
 	href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<link href="/Exam-12758-20170106-1/css/login.css" rel="stylesheet"
+<link href="/css/login.css" rel="stylesheet"
 	type="text/css" />
 </head>
 <body>
@@ -41,14 +41,14 @@
 
      function query(queryInfo) {
          $.ajax({
-             url: "/Exam-12758-20170106-1/data/customer.action",
+             url: "/data/customer.action",
              type: "GET",
              dataType: "json",
              data: queryInfo,
              success: function (data) {
                  alert(data);
                  if(data == "登录成功"){
-                	 window.location.href="/Exam-12758-20170106-1/film/ShowFilm.action"; 
+                	 window.location.href="/film/ShowFilm.action";
                  }
              }
          })

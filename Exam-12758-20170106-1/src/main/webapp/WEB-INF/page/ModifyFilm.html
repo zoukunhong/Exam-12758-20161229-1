@@ -58,7 +58,7 @@
 	  });
 	  function queryLanguage() {
 	      $.ajax({
-	          url: "/Exam-12758-20170106-1/data/language.action",
+	          url: "/data/language.action",
 	          type: "GET",
 	          dataType: "json",
 	          data: {},
@@ -97,14 +97,14 @@
 	    		  language : $("#language").val()
 	      };
 	      $.ajax({
-	          url: "/Exam-12758-20170106-1/data/film/modify.action",
+	          url: "/data/film/modify.action",
 	          type: "GET",
 	          dataType: "json",
 	          data: submitInfo,
 	          success: function (data) {
 					if(data > 0){
 						alert("修改成功！");
-						window.location.href="/Exam-12758-20170106-1/film/ShowFilm.action"; 
+						window.location.href="/film/ShowFilm.action"; 
 					}else{
 						alert("修改失败！");
 					}
@@ -116,7 +116,7 @@
 	        filmId: filmId
 	      };
 	      $.ajax({
-	          url: "/Exam-12758-20170106-1/data/film/queryById.action",
+	          url: "/data/film/queryById.action",
 	          type: "GET",
 	          dataType: "json",
 	          data: queryInfo,
