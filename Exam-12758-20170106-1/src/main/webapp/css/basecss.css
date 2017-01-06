@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+a,address,b,big,blockquote,body,center,cite,code,dd,del,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,label,legend,li,ol,p,pre,small,span,strong,u,ul,var{margin: 0;padding: 0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display: block}
+body {color: #666;background: #fff;font: 12px/150% Arial, Verdana, "\5b8b\4f53";min-width: 1024px;}
+h2,h3 {font-family: "microsoft yahei";font-weight: 400}
+a {color: #666;text-decoration: none}
+a:hover {color: #C81623}
+hr {-moz-box-sizing: content-box;box-sizing: content-box;height: 0}
+button,html input[type=button],input[type=submit] {-webkit-apperance: button;cursor: pointer}
+button[disabled],html input[disabled] {cursor: default}
+ol,ul {list-style: none}
+img {border: 0;vertical-align: middle}
+em,i,u {font-style: normal}
+
+
+
+
+
+

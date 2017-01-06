@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zou.mapper.CustomerMapper">
+	<resultMap type="Customer" id="customer">
+		<id property="id" column="customer_id" />
+		<result property="firstName" column="first_name"/>
+	</resultMap>
+	<select id="selectAllByEntity" parameterType="Customer" resultMap="customer">
+		select customer_id,first_name from customer where first_name = #{firstName}
+	</select>
+</mapper>

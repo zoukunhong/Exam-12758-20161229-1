@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zou.mapper.FilmMapper">
+	<resultMap type="Film" id="film">
+		<id property="filmId" column="film_id" />
+		<result property="title" column="title" />
+		<result property="description" column="description" />
+		<association property="language" column="language_id"
+			javaType="Language">
+			<id property="languageId" column="language_id" />
+			<result property="name" column="name" />
+			<result property="lastUpdate" column="last_update" />
+		</association>
+	</resultMap>
+
+	<select id="select" parameterType="com.zou.dto.Page" resultMap="film">
+		select
+		f.film_id,f.title,f.description,l.language_id,l.name,l.last_update
+		from film f,language l where f.language_id = l.language_id
+		<if test="entity.title != null">
+			and title like concat('%', concat(#{entity.title}, '%'))
+		</if>
+		<if test="entity.description != null">
+			and description like concat('%',
+			concat(#{entity.description}, '%'))
+		</if>
+		<if test="entity.language != null">
+			<if test="entity.language.languageId != null">
+				and l.language_id = #{entity.language.languageId}
+			</if>
+			<if test="entity.language.name != null">
+				and l.name = #{entity.language.name}
+			</if>
+			<if test="entity.language.lastUpdate != null">
+				and l.last_update = #{entity.language.lastUpdate}
+			</if>
+		</if>
+		order by f.film_id
+		limit #{offset},#{pageSize}
+	</select>
+
+	<select id="selectCount" parameterType="Film" resultType="int">
+		select count(*) from film f,language l where f.language_id =
+		l.language_id
+		<if test="title != null">
+			and title like concat('%', concat(#{title}, '%'))
+		</if>
+		<if test="description != null">
+			and description like concat('%', concat(#{description},
+			'%'))
+		</if>
+		<if test="language != null">
+			<if test="language.languageId != null">
+				and l.language_id = #{language.languageId}
+			</if>
+			<if test="language.name != null">
+				and l.name = #{language.name}
+			</if>
+			<if test="language.lastUpdate != null">
+				and l.last_update = #{language.lastUpdate}
+			</if>
+		</if>
+	</select>
+
+	<select id="getById" resultMap="film">
+		select
+		f.film_id,f.title,f.description,l.language_id,l.name,l.last_update
+		from film f,language l where f.language_id = l.language_id and
+		f.film_id = #{id}
+	</select>
+
+	<update id="update" parameterType="Film">
+		update film set
+		<if test="title != null">
+			title = #{title}
+		</if>
+		<if test="description != null">
+			,description = #{description}
+		</if>
+		<if test="language != null">
+			<if test="language.languageId != null">
+				,language_id = #{language.languageId}
+			</if>
+		</if>
+		where film_id = #{filmId}
+	</update>
+
+	<delete id="delete" parameterType="Film">
+		delete from film where film_id = #{filmId}
+	</delete>
+	<insert id="insert" parameterType="Film" useGeneratedKeys="true" keyProperty="filmId">
+		insert into film(title,description,language_id)
+		values(#{title},#{description},#{language.languageId});
+	</insert>
+</mapper>
