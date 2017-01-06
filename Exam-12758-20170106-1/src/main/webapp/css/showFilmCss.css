@@ -2,10 +2,15 @@
 .container{
 	width: 1024px;
 	margin: 0px auto;
+	margin-top:100px;
+	padding: 20px 12px;
+	color: #877B93;
+	font-size: 14px;
+	background-color: #F4FAFA;
+	border-radius: 6px;
 }
 .form-horizontal{
 	text-align: center;
-	margin-top: 100px;
 	margin-bottom: 20px;
 }
 .form-horizontal .form-group{
@@ -43,7 +48,7 @@
 }
 .table-striped tr td{
 	line-height: 16px;
-	background-color: #ECF7F6;
+	text-align: center;
 }
 .pagination{
 	margin-top:20px;
@@ -61,7 +66,7 @@
 	border-radius: 2px;
 	list-style: none;
 	text-align: center;
-	background-color: #ECF7F6;
+	background-color: #F4FAFA;
 	border: 1px solid #82B1CA;
 }
 .pagination li a{

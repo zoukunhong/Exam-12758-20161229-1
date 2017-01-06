@@ -16,4 +16,12 @@ em,i,u {font-style: normal}
 
 
 
-
+.btn{
+	height:24px;
+	max-width:160px;
+	min-width:60px;
+	border: 1px solid #C5EBF5;
+	border-radius: 3px;
+	padding: 0 0px;
+	background-color: #ECF7F6;
+}

@@ -2,29 +2,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<link href="/css/login.css" rel="stylesheet"
-	type="text/css" />
+<title>登录界面</title>
+<link href="/css/basecss.css" rel="stylesheet" type="text/css"/>
+<link href="/css/commonCss.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container">
-		<div>
-			<div class="form-horizontal" role="form">
-				<div class="form-group col-sm-6">
-					<label for="firstName" class="col-sm-4 control-label">名字</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="firstName"
-							placeholder="请输入名字">
-					</div>
+		<div class="title">登录</div>
+		<div class="space">
+			<div class="input-row">
+				<label class="control-label">名字</label>
+				<div class="">
+					<input type="text" class="form-control" id="firstName" placeholder="请输入名字">
 				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10 col-sm-pull-1 text-right">
-						<button id="query" class="btn btn-info">登录</button>
-					</div>
+			</div>
+			<div class="input-row">
+				<div class="center">
+					<button id="query" class="btn-info">登录</button>
 				</div>
 			</div>
 		</div>
